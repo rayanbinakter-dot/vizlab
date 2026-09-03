@@ -1,16 +1,45 @@
-# React + Vite
+# ◈ VizLab
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Interactive 3D science visualizations, mapped chapter-by-chapter to the NCTB SSC & HSC syllabus.**
 
-Currently, two official plugins are available:
+Students don't struggle with formulas — they struggle to *picture* what the formula
+describes. VizLab replaces the flat textbook diagram with something you can rotate,
+slice, and drive with a slider.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Chapter-wise navigation** — Class → Subject → Chapter → Topic, exactly like the syllabus
+- **11 interactive 3D models** across Physics, Chemistry, Biology, Mathematics
+- **Bilingual** — full English / বাংলা toggle
+- **Live parameter controls** — every model exposes sliders, toggles and dropdowns
+- **Instant search** — find a concept in either language
+- **Code-split** — each model is a ~1.5 kB lazy chunk; the app stays fast as content grows
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the Oxlint configuration
+React 19 · Vite · react-three-fiber · drei · zustand · react-router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Quick start
+
+```bash
+npm install
+npm run dev
+```
+
+## Adding a visualization
+
+Three files, no plumbing — see [`SETUP.md`](./SETUP.md) §7.
+
+1. Add the topic to `src/data/curriculum.js`
+2. Create `src/models/<subject>/<Name>.jsx` receiving a single `params` prop
+3. Register the key in `src/models/registry.js`
+
+Navigation, search, routing, and controls generate themselves.
+
+## Docs
+
+Full setup, GitHub workflow, deployment and roadmap: **[SETUP.md](./SETUP.md)**
+
+## License
+
+MIT
