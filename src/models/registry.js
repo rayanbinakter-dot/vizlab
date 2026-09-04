@@ -14,6 +14,7 @@ export const MODELS = {
   'physics/Projectile': lazy(() => import('./physics/Projectile.jsx')),
   'physics/Wave':       lazy(() => import('./physics/Wave.jsx')),
   'physics/Vectors':    lazy(() => import('./physics/Vectors.jsx')),
+  'physics/RiverBoat':  lazy(() => import('./physics/RiverBoat.jsx')),
   'physics/Orbit':      lazy(() => import('./physics/Orbit.jsx')),
   'chemistry/Atom':     lazy(() => import('./chemistry/Atom.jsx')),
   'chemistry/Molecule': lazy(() => import('./chemistry/Molecule.jsx')),

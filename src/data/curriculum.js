@@ -228,6 +228,45 @@ export const CURRICULUM = {
               { id: 'showCross', label: { en: 'Show A×B', bn: 'A×B দেখাও' }, type: 'toggle', value: true },
             ],
           },
+          {
+            id: 'river-boat',
+            title: { en: 'River and Boat — Relative Velocity', bn: 'নদী ও নৌকা — আপেক্ষিক বেগ' },
+            concept: {
+              en: 'Steer the boat and watch the trade-off between crossing time and downstream drift.',
+              bn: 'নৌকার দিক ঘুরিয়ে পার হওয়ার সময় ও ভাটির দিকে সরণের সম্পর্ক দেখো।',
+            },
+            model: 'physics/RiverBoat',
+            formula: 'tₘᵢₙ = d / v_b   ·   x = v_r d / v_b   ·   sin θ = v_r / v_b',
+            controls: [
+              { id: 'boatSpeed', label: { en: 'Boat speed v_b', bn: 'নৌকার বেগ v_b' }, min: 1, max: 10, step: 0.1, value: 4, unit: ' m/s' },
+              { id: 'riverSpeed', label: { en: 'River speed v_r', bn: 'স্রোতের বেগ v_r' }, min: 0, max: 10, step: 0.1, value: 2.4, unit: ' m/s' },
+              { id: 'angle', label: { en: 'Steering angle θ (upstream)', bn: 'নৌকার কোণ θ (উজানে)' }, min: -20, max: 80, step: 1, value: 0, unit: '°' },
+              { id: 'showBoth', label: { en: 'Show both routes', bn: 'দুই পথ দেখাও' }, type: 'toggle', value: true },
+            ],
+            notes: {
+              heading: { en: 'Exam box — পরীক্ষায় আসে', bn: 'পরীক্ষায় আসে' },
+              columns: [
+                { en: 'Case', bn: 'ক্ষেত্র' },
+                { en: 'Steering θ', bn: 'কোণ θ' },
+                { en: 'Time', bn: 'সময়' },
+                { en: 'Drift', bn: 'সরণ' },
+              ],
+              rows: [
+                {
+                  label: { en: 'Shortest time', bn: 'স্বল্পতম সময়' },
+                  cells: ['0°', 'd / v_b', 'v_r d / v_b'],
+                },
+                {
+                  label: { en: 'Shortest path', bn: 'স্বল্পতম পথ' },
+                  cells: ['sin⁻¹(v_r / v_b)', 'd / √(v_b² − v_r²)', '0'],
+                },
+              ],
+              foot: {
+                en: 'Zero drift is possible only when v_b > v_r. Width d = 200 m.',
+                bn: 'শূন্য সরণ সম্ভব কেবল v_b > v_r হলে। প্রস্থ d = ২০০ m।',
+              },
+            },
+          },
         ],
       },
       {
