@@ -10,7 +10,17 @@ export default function Viewer() {
   const { classId, subjectId, chapterId, topicId } = useParams();
   const t = useT();
   const markVisited = useStore((s) => s.markVisited);
-  const found = getTopic(classId, subjectId, chapterId, topicId);
+  // `getTopic()` returns a fresh { chapter, topic } object on every call, so
+  // memoize it on the route params. Without this, `found` changed identity on
+  // every render, which (a) rebuilt `initial` and re-ran the `setParams` reset
+  // effect below, and (b) re-ran the `markVisited` effect (App subscribes to
+  // the whole store, so `markVisited` re-renders Viewer) — together an
+  // infinite update loop ("Maximum update depth exceeded") that unmounted the
+  // whole app to a blank page.
+  const found = useMemo(
+    () => getTopic(classId, subjectId, chapterId, topicId),
+    [classId, subjectId, chapterId, topicId],
+  );
 
   const initial = useMemo(() => {
     const o = {};
