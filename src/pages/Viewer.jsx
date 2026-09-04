@@ -63,6 +63,25 @@ export default function Viewer() {
         <h2>{t(topic.title)}</h2>
         <div className="concept">{t(topic.concept)}</div>
         {topic.formula && <div className="formula">{topic.formula}</div>}
+        {topic.notes && (
+          <section className="notes-box" aria-label={t(topic.notes.heading)}>
+            <h3>{t(topic.notes.heading)}</h3>
+            <div className="notes-table">
+              <div className="notes-row notes-header">
+                {topic.notes.columns.map((column) => (
+                  <span key={column.en}>{t(column)}</span>
+                ))}
+              </div>
+              {topic.notes.rows.map((row) => (
+                <div className="notes-row" key={row.label.en}>
+                  <b>{t(row.label)}</b>
+                  {row.cells.map((cell, index) => <span key={`${row.label.en}-${index}`}>{cell}</span>)}
+                </div>
+              ))}
+            </div>
+            <p>{t(topic.notes.foot)}</p>
+          </section>
+        )}
 
         <Controls
           controls={topic.controls}

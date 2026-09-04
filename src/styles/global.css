@@ -120,6 +120,36 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .empty{padding:60px 40px;text-align:center;color:var(--muted)}
 .empty h2{color:var(--text);font-size:20px;margin-bottom:10px}
 
+/* ---------- topic notes ---------- */
+.notes-box{margin-top:16px;padding:12px;background:#0e1826;border:1px solid var(--line);border-radius:9px}
+.notes-box h3{font-size:11px;color:#8ab4ff;text-transform:uppercase;letter-spacing:.55px;margin-bottom:9px}
+.notes-table{font-size:10px;line-height:1.35}
+.notes-row{display:grid;grid-template-columns:1.1fr 1.15fr 1.2fr 1.15fr;gap:5px;padding:7px 4px;border-top:1px solid var(--line);align-items:start}
+.notes-row span,.notes-row b{min-width:0;overflow-wrap:anywhere}
+.notes-row b{font-weight:600;color:var(--text)}
+.notes-header{border-top:none;padding-top:0;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.2px}
+.notes-box p{margin-top:9px;color:var(--muted);font-size:10px;line-height:1.5}
+
+/* ---------- River & Boat interactive overlays ---------- */
+.river-hud{width:min(360px,58vw);padding:10px 12px;border:1px solid rgba(93,211,238,.4);border-radius:10px;background:rgba(4,17,29,.9);box-shadow:0 10px 30px rgba(0,0,0,.32);color:#e6edf6;pointer-events:none;font-family:var(--font)}
+.river-hud-title{font-size:12px;font-weight:700;color:#d7f9ff;margin-bottom:8px}
+.river-hud-title span,.river-predict strong span{font-weight:500;color:#8ca4b8}
+.river-readout{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.river-readout div{display:flex;flex-direction:column;gap:2px}
+.river-readout span{font-size:9px;color:#8ca4b8}
+.river-readout b{font-size:13px;color:#f8fafc}
+.river-status{margin-top:8px;padding-top:7px;border-top:1px solid rgba(93,211,238,.18);font-size:10px;color:#94d7a5;line-height:1.35}
+.river-status.warning{color:#fca5a5}
+.river-predict{width:270px;padding:11px 13px;background:rgba(10,17,29,.95);border:1px solid #334155;border-radius:10px;box-shadow:0 12px 28px rgba(0,0,0,.42);font-family:var(--font);pointer-events:auto}
+.river-predict strong{display:block;font-size:11px;color:#fbbf24;margin-bottom:5px}
+.river-predict p{font-size:11px;line-height:1.4;color:#e6edf6}
+.river-predict small{display:block;margin-top:3px;font-size:9px;color:#8296b0;line-height:1.35}
+.river-answer-buttons{display:flex;gap:7px;margin-top:9px}
+.river-answer-buttons button{flex:1;padding:6px 8px;border:1px solid #3b4a5f;border-radius:6px;background:#162437;color:#dbeafe;font-size:10px}
+.river-answer-buttons button:hover{border-color:#4f8cff;background:#1a365d}
+.river-answer{margin-top:9px;padding:7px 8px;border-radius:6px;background:#281c22;color:#fda4af;font-size:10px;line-height:1.4}
+.river-answer.correct{background:#122c25;color:#9ae6b4}
+
 .mobile-only{display:none}
 @media(max-width:880px){
   .sidebar{display:none}
