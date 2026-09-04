@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <section className="hero">
-        <h1>See the concept,<br />not just the equation.</h1>
+        <h1>Learn science,<br />by seeing it.</h1>
         <p>
           Interactive 3D visualizations mapped chapter-by-chapter to the NCTB
           syllabus. Pick your chapter, drag the model, move a slider — and watch
